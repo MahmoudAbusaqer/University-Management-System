@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!--    <script src="Java%2520Script/fontawsom.js"></script>-->
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: "Exo", sans-serif;
+            color: #fff;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            width: 100%;
+            position: absolute;
+            top: 35%;
+            text-align: center;
+        }
+
+        .bigDiv {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: auto;
+            margin-top: 100px;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            width: 1060px;
+            height: 530px;
+        }
+
+        .persnalInformaion {
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 320px;
+            margin-top: 10px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 670px;
+            height: 160px;
+        }
+
+        .cv {
+            margin: auto;
+            padding: 10px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-bottom: 20px;
+            margin-left: 320px;
+            margin-top: 210px;
+            width: 670px;
+            height: 250px;
+        }
+
+        #imageDiv {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            width: 165px;
+        }
+
+        #writeName {
+            background-color: rgba(0, 0, 0, 0.1);
+            position: absolute;
+            margin-top: 380px;
+            margin-left: -20px;
+        }
+
+        h3,
+        h2 {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            line-height: inherit;
+        }
+
+        h4 {
+            text-align: center;
+            font-style: italic;
+            line-height: inherit;
+            font-size: 15px;
+        }
+
+        img {
+            height: 200%;
+            width: 200%;
+            height: auto;
+        }
+
+        p {
+            position: relative;
+            margin: auto;
+            font-family: "lora-regular", serif;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        /*CRUD style */
+        #CRUDDiv {
+            position: absolute;
+            margin-top: 500px;
+            margin-left: 110px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        #buttonDiv {
+            margin: auto;
+            padding: 10px;
+            padding-left: 0px;
+            align-content: space-between;
+            position: relative;
+            width: 550px;
+            height: 50px;
+        }
+
+        label {
+            height: 0px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        button>a:hover {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+    <script>
+        //        if (!document.cookie) {
+        //            window.location.href = "login-page.html";
+        //        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h2> Teacher </h2>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="teacher-page.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href=" #CRUD">CRUD</a>
+            </li>
+        </ul>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+
+            </li>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-danger" onclick="logOut()"> LogOut</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+    </nav>
+    <div class="bigDiv">
+        <div id="imageDiv">
+            <img alt="teasher icon image" src="grant-gustin.jpg">
+
+        </div>
+        <div id="writeName">
+            <h2>Maximilian Pattinson</h2>
+            <h4>Assistant Professor at MIT</h4>
+        </div>
+        <div class="persnalInformaion">
+            <h3>Basic Information</h3>
+            <p>- Maximilian Pattinson, PhD<br> - Head of Computer Science and Software Development Departments<br>
+                - Faculty of Information Technology<br>
+                - Massachusetts Institute of Technology </p>
+
+        </div>
+        <div class="cv">
+            <h3>Biography</h3>
+            <p>- Engaged, creative computer science professional with 15+ years experience. Seeking to leverage
+                exemplary leadership skills, analytical skills, and coding skills as a project manager for Cisco
+                Systems.</p>
+            <p>- Inquisitive, energetic computer science specialist skilled in leadership, with a strong foundation in
+                math, logic, and cross-platform coding. Seeking to leverage solid skills in collaboration,
+                communication, and development as a programmer for Google.</p>
+        </div>
+    </div>
+
+    <!-- CRUD code  -->
+    <div class="container " id="CRUDDiv">
+        <h1 id="CRUD">Semester Registration </h1>
+        <form name="userForm" onsubmit="create_user()">
+            <div class="form-group">
+                <label></label>
+                <input type="text" class="form-control" placeholder="id" name="id" disabled>
+                <label></label>
+                <input type="text" class="form-control" placeholder="student name" name="studentName">
+                <label></label>
+                <input type="text" class="form-control" placeholder="course" name="course">
+                <label></label>
+                <input type="text" class="form-control" placeholder="course time" name="courseTime">
+            </div>
+
+            <div id="buttonDiv">
+                <button class="btn btn-success" type="submit">Create</button>
+
+                <button type="button" class="btn btn-primary" onclick="read_data()">Read</button>
+
+                <button type="button" class="btn btn-warning" onclick="update_data()">Update</button>
+
+                <button type="button" class="btn btn-danger" onclick="delete_data()">delete</button>
+            </div>
+        </form>
+        <br>
+        <br>
+        <div class="row">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Course Time</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="all_data">
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <script>
+        id = localStorage.length + 1;
+        userForm.id.value = id;
+
+        function delete_data() {
+            localStorage.clear();
+            read_data();
+            id = localStorage.length++;
+            userForm.id.value = id;
+        }
+
+        function update_data() {
+            var id = userForm.id.value;
+            var studentName = userForm.studentName.value;
+            var course = userForm.course.value;
+            var courseTime = userForm.courseTime.value;
+
+            var user = {
+                id: id,
+                studentName: studentName,
+                course: course,
+                courseTime: courseTime
+            };
+
+            localStorage.setItem(id, JSON.stringify(user));
+            read_data();
+        }
+
+        function edit_user(obj) {
+            row = obj.parentElement.parentElement;
+            id = row.children[0].innerHTML;
+            studentName = row.children[1].innerHTML;
+            course = row.children[2].innerHTML;
+            courseTime = row.children[3].innerHTML;
+
+            userForm.id.value = id;
+            userForm.studentName.value = studentName;
+            userForm.course.value = course;
+            userForm.courseTime.value = courseTime;
+        }
+
+        function delete_user(obj) {
+            row = obj.parentElement.parentElement;
+            id = row.children[0].innerHTML;
+            localStorage.removeItem(id);
+            row.remove();
+        }
+
+        function create_user() {
+            event.preventDefault();
+            var id = userForm.id.value;
+            var studentName = userForm.studentName.value;
+            var course = userForm.course.value;
+            var courseTime = userForm.courseTime.value;
+
+            var user = {
+                id: id,
+                studentName: studentName,
+                course: course,
+                courseTime: courseTime
+            };
+
+            localStorage.setItem(id, JSON.stringify(user));
+
+
+            tdata = document.getElementById("all_data");
+            row = tdata.insertRow(-1);
+            cell0 = row.insertCell(0);
+            cell1 = row.insertCell(1);
+            cell2 = row.insertCell(2);
+            cell3 = row.insertCell(3);
+            cell4 = row.insertCell(4);
+            cell5 = row.insertCell(5);
+
+            cell0.innerHTML = id;
+            cell1.innerHTML = studentName;
+            cell2.innerHTML = course;
+            cell3.innerHTML = courseTime;
+            cell4.innerHTML = `
+<span onclick="edit_user(this)" class="aa"><i class="fas fa-edit"></i></span>`;
+            cell5.innerHTML = `
+<span onclick="delete_user(this)" class="aa"><i class="fas fa-trash"></i></span>`;
+
+            id++;
+            userForm.id.value = id;
+            userForm.studentName.value = null;
+            userForm.course.value = null;
+            userForm.courseTime.value = null;
+        }
+
+
+        function read_data() {
+            tdata = document.getElementById("all_data");
+            tdata.innerHTML = null;
+            for (i = 0; i < localStorage.length; i++) {
+                row = tdata.insertRow(-1);
+                cell0 = row.insertCell(0);
+                cell1 = row.insertCell(1);
+                cell2 = row.insertCell(2);
+                cell3 = row.insertCell(3);
+                cell4 = row.insertCell(4);
+                cell5 = row.insertCell(5);
+
+                user_data = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
+                cell0.innerHTML = user_data.id;
+                cell1.innerHTML = user_data.studentName;
+                cell2.innerHTML = user_data.course;
+                cell3.innerHTML = user_data.courseTime;
+                cell4.innerHTML = `
+<span onclick="edit_user(this)" class="aa"><i class="fas fa-edit"></i></span>`;
+                cell5.innerHTML = `
+<span onclick="delete_user(this)" class="aa"><i class="fas fa-trash"></i></span>`;
+
+
+            }
+
+        }
+
+        function logOut() {
+            location.href = "login-page.html";
+        }
+
+        window.FontAwesomeKitConfig = {
+            "asyncLoading": {
+                "enabled": true
+            },
+            "autoA11y": {
+                "enabled": true
+            },
+            "baseUrl": "https://kit-free.fontawesome.com",
+            "detectConflictsUntil": null,
+            "license": "free",
+            "method": "css",
+            "minify": {
+                "enabled": true
+            },
+            "v4FontFaceShim": {
+                "enabled": true
+            },
+            "v4shim": {
+                "enabled": true
+            },
+            "version": "latest"
+        };
+        ! function() {
+            function r(e) {
+                var t, n = [],
+                    i = document,
+                    o = i.documentElement.doScroll,
+                    r = "DOMContentLoaded",
+                    a = (o ? /^loaded|^c/ : /^loaded|^i|^c/).test(i.readyState);
+                a || i.addEventListener(r, t = function() {
+                    for (i.removeEventListener(r, t), a = 1; t = n.shift();) t()
+                }), a ? setTimeout(e, 0) : n.push(e)
+            }! function() {
+                if (!(void 0 === window.Element || "classList" in document.documentElement)) {
+                    var e, t, n, i = Array.prototype,
+                        o = i.push,
+                        r = i.splice,
+                        a = i.join;
+                    d.prototype = {
+                        add: function(e) {
+                            this.contains(e) || (o.call(this, e), this.el.className = this.toString())
+                        },
+                        contains: function(e) {
+                            return -1 != this.el.className.indexOf(e)
+                        },
+                        item: function(e) {
+                            return this[e] || null
+                        },
+                        remove: function(e) {
+                            if (this.contains(e)) {
+                                for (var t = 0; t < this.length && this[t] != e; t++);
+                                r.call(this, t, 1), this.el.className = this.toString()
+                            }
+                        },
+                        toString: function() {
+                            return a.call(this, " ")
+                        },
+                        toggle: function(e) {
+                            return this.contains(e) ? this.remove(e) : this.add(e), this.contains(e)
+                        }
+                    }, window.DOMTokenList = d, e = Element.prototype, t = "classList", n = function() {
+                        return new d(this)
+                    }, Object.defineProperty ? Object.defineProperty(e, t, {
+                        get: n
+                    }) : e.__defineGetter__(t, n)
+                }
+
+                function d(e) {
+                    for (var t = (this.el = e).className.replace(/^\s+|\s+$/g, "").split(/\s+/), n = 0; n < t.length; n++) o.call(this, t[n])
+                }
+            }();
+
+            function a(e) {
+                var t, n, i, o;
+                prefixesArray = e || ["fa"], prefixesSelectorString = "." + Array.prototype.join.call(e, ",."), t = document.querySelectorAll(prefixesSelectorString), Array.prototype.forEach.call(t, function(e) {
+                    n = e.getAttribute("title"), e.setAttribute("aria-hidden", "true"), i = !e.nextElementSibling || !e.nextElementSibling.classList.contains("sr-only"), n && i && ((o = document.createElement("span")).innerHTML = n, o.classList.add("sr-only"), e.parentNode.insertBefore(o, e.nextSibling))
+                })
+            }
+            var d = function(e, t) {
+                    var n = document.createElement("link");
+                    n.href = e, n.media = "all", n.rel = "stylesheet", n.id = "font-awesome-5-kit-css", t && t.detectingConflicts && t.detectionIgnoreAttr && n.setAttributeNode(document.createAttribute(t.detectionIgnoreAttr)), document.getElementsByTagName("head")[0].appendChild(n)
+                },
+                c = function(e, t) {
+                    ! function(e, t) {
+                        var n, i = t && t.before || void 0,
+                            o = t && t.media || void 0,
+                            r = window.document,
+                            a = r.createElement("link");
+                        if (t && t.detectingConflicts && t.detectionIgnoreAttr && a.setAttributeNode(document.createAttribute(t.detectionIgnoreAttr)), i) n = i;
+                        else {
+                            var d = (r.body || r.getElementsByTagName("head")[0]).childNodes;
+                            n = d[d.length - 1]
+                        }
+                        var c = r.styleSheets;
+                        a.rel = "stylesheet", a.href = e, a.media = "only x",
+                            function e(t) {
+                                if (r.body) return t();
+                                setTimeout(function() {
+                                    e(t)
+                                })
+                            }(function() {
+                                n.parentNode.insertBefore(a, i ? n : n.nextSibling)
+                            });
+                        var s = function(e) {
+                            for (var t = a.href, n = c.length; n--;)
+                                if (c[n].href === t) return e();
+                            setTimeout(function() {
+                                s(e)
+                            })
+                        };
+
+                        function l() {
+                            a.addEventListener && a.removeEventListener("load", l), a.media = o || "all"
+                        }
+                        a.addEventListener && a.addEventListener("load", l), (a.onloadcssdefined = s)(l)
+                    }(e, t)
+                },
+                e = function(e, t, n) {
+                    var i = t && void 0 !== t.autoFetchSvg ? t.autoFetchSvg : void 0,
+                        o = t && void 0 !== t.async ? t.async : void 0,
+                        r = t && void 0 !== t.autoA11y ? t.autoA11y : void 0,
+                        a = document.createElement("script"),
+                        d = document.scripts[0];
+                    a.src = e, void 0 !== r && a.setAttribute("data-auto-a11y", r ? "true" : "false"), i && (a.setAttributeNode(document.createAttribute("data-auto-fetch-svg")), a.setAttribute("data-fetch-svg-from", t.fetchSvgFrom)), o && a.setAttributeNode(document.createAttribute("defer")), n && n.detectingConflicts && n.detectionIgnoreAttr && a.setAttributeNode(document.createAttribute(n.detectionIgnoreAttr)), d.parentNode.appendChild(a)
+                };
+
+            function s(e, t) {
+                var n = t && t.addOn || "",
+                    i = t && t.baseFilename || e.license + n,
+                    o = t && t.minify ? ".min" : "",
+                    r = t && t.fileSuffix || e.method,
+                    a = t && t.subdir || e.method;
+                return e.baseUrl + "/releases/" + ("latest" === e.version ? "latest" : "v".concat(e.version)) + "/" + a + "/" + i + o + "." + r
+            }
+            var t, n, i, o, l;
+            try {
+                if (window.FontAwesomeKitConfig) {
+                    var u, f = window.FontAwesomeKitConfig,
+                        m = {
+                            detectingConflicts: f.detectConflictsUntil && new Date <= new Date(f.detectConflictsUntil),
+                            detectionIgnoreAttr: "data-fa-detection-ignore",
+                            detectionTimeoutAttr: "data-fa-detection-timeout",
+                            detectionTimeout: null
+                        };
+                    "js" === f.method && (o = m, l = {
+                        async: (i = f).asyncLoading.enabled,
+                        autoA11y: i.autoA11y.enabled
+                    }, "pro" === i.license && (l.autoFetchSvg = !0, l.fetchSvgFrom = i.baseUrl + "/releases/" + ("latest" === i.version ? "latest" : "v".concat(i.version)) + "/svgs"), i.v4shim.enabled && e(s(i, {
+                        addOn: "-v4-shims",
+                        minify: i.minify.enabled
+                    })), e(s(i, {
+                        minify: i.minify.enabled
+                    }), l, o)), "css" === f.method && function(e, t) {
+                        var n, i = a.bind(a, ["fa", "fab", "fas", "far", "fal", "fad"]);
+                        e.autoA11y.enabled && (r(i), n = i, "undefined" != typeof MutationObserver && new MutationObserver(n).observe(document, {
+                            childList: !0,
+                            subtree: !0
+                        })), e.v4shim.enabled && (e.license, e.asyncLoading.enabled ? c(s(e, {
+                            addOn: "-v4-shims",
+                            minify: e.minify.enabled
+                        }), t) : d(s(e, {
+                            addOn: "-v4-shims",
+                            minify: e.minify.enabled
+                        }), t));
+                        e.v4FontFaceShim.enabled && (e.asyncLoading.enabled ? c(s(e, {
+                            addOn: "-v4-font-face",
+                            minify: e.minify.enabled
+                        }), t) : d(s(e, {
+                            addOn: "-v4-font-face",
+                            minify: e.minify.enabled
+                        }), t));
+                        var o = s(e, {
+                            minify: e.minify.enabled
+                        });
+                        e.asyncLoading.enabled ? c(o, t) : d(o, t)
+                    }(f, m), m.detectingConflicts && ((u = document.currentScript.getAttribute(m.detectionTimeoutAttr)) && (m.detectionTimeout = u), document.currentScript.setAttributeNode(document.createAttribute(m.detectionIgnoreAttr)), t = f, n = m, r(function() {
+                        var e = document.createElement("script");
+                        n && n.detectionIgnoreAttr && e.setAttributeNode(document.createAttribute(n.detectionIgnoreAttr)), n && n.detectionTimeoutAttr && n.detectionTimeout && e.setAttribute(n.detectionTimeoutAttr, n.detectionTimeout), e.src = s(t, {
+                            baseFilename: "conflict-detection",
+                            fileSuffix: "js",
+                            subdir: "js",
+                            minify: t.minify.enabled
+                        }), e.async = !0, document.body.appendChild(e)
+                    }))
+                }
+            } catch (e) {}
+        }();
+    </script>
+    <script src="Java%2520Script/fontawsom.js"> </script>
+    <!--    <script src="Java%2520Script/CRUD.js"></script>-->
+</body></html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <title>Log In</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: "Exo", sans-serif;
+            color: #fff;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .smallbackground {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: auto;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            width: 500px;
+            height: 430px;
+        }
+
+        .smallbackground .header-text {
+            font-size: 32px;
+            font-weight: 600;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        .smallbackground input {
+            padding: 10px;
+            margin: 10px 0px;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 16px;
+            font-family: 'Pacifico';
+        }
+
+        .smallbackground button {
+            background-color: #c02364;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 50%;
+            font-size: 18px;
+            padding: 10px;
+            margin: 20px 110px;
+        }
+
+        span a {
+            color: #ddd;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="smallbackground">
+        <div class="header-text">Login Here</div>
+        <form name="userLogin" method="post" onsubmit="Login()">
+            <input type="text" placeholder="User Name" name="username">
+            <input type="password" placeholder="Your Password" name="password">
+            <button type="submit" id="button" value="login">Login</button>
+        </form>
+        <p>
+            Don't hava an account? <a  href="signup-page.html"><span>Sign up</span> </a>
+        </p>
+    </div>
+    <script>
+        function Login() {
+            event.preventDefault();
+            users = [{
+                    username: "mahmoud",
+                    password: "123",
+                    permetion: "std"
+                },
+                {
+                    username: "osama",
+                    password: "456",
+                    permetion: "iug"
+                }
+                // { username: "ali", password: "789", permetion: "student" },
+            ];
+
+            var username = userLogin.username.value;
+            var password = userLogin.password.value;
+
+            user = Check_user(users, username, password);
+            
+//            var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+//            var name = username.value;
+//            if (!regName.test(name)) {
+//                 alert("Error in User Name or Password");
+//                username.style.border = "1px solid red";
+//                document.getElementById('username_div').style.color = "red";
+//                name_error.textContent = "Username is required";
+//                username.focus();
+//                return false;
+//            }
+//            
+            if (user != null) {
+                var date = new Date();
+                var exp = date.getTime() + 3 * 24 * 60 * 60 * 1000;
+                date.setTime(exp);
+                document.cookie = "username=" + user.username + ";expires=" + date;
+                if (user.permetion == "iug") {
+                    location.href = "teacher-page.html";
+                } else {
+                    location.href = "student-page.html";
+                }
+            } else {
+                alert("Error in User Name or Password");
+            }
+            
+            
+
+        }
+        
+
+        function Check_user(users, username, password) {
+            for (i in users) {
+                user = users[i];
+                if (user.username == username && user.password == password) {
+                    return user;
+                }
+            }
+            return null;
+        }
+
+    </script>
+    <!--    <script type="text/javascript" src="Java%2520Script/login.js"></script>-->
+</body>
+
+</html>

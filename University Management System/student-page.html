@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap-4.4.1-dist/css/bootstrap.css">
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            font-family: "Exo", sans-serif;
+            color: #fff;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bigDiv {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            margin: inherit;
+            margin-left: 720px;
+            margin-top: 30px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            width: 620px;
+            height: 530px;
+
+        }
+
+        .persnalInformaion {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 330px;
+            margin-top: 30px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 370px;
+            height: 160px;
+        }
+
+        .cv {
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 330px;
+            margin-top: 220px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 370px;
+            height: 340px;
+        }
+
+        #imageDiv {
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0px 0px 10px #000;
+            margin: inherit;
+            padding: 10px;
+            position: absolute;
+            margin-left: 20px;
+            margin-top: 100px;
+            width: 290px;
+            height: 390px;
+            border-radius: 20px;
+        }
+
+        #writeName {
+            padding: 5px;
+            position: absolute;
+            margin-top: 20px;
+        }
+
+        .bigDiv #insideDiv1 {
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 40px;
+            margin-top: 10px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 250px;
+            height: 160px;
+        }
+
+        .bigDiv #insideDiv2 {
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 330px;
+            margin-top: 10px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 250px;
+            height: 160px;
+        }
+
+        .bigDiv #insideDiv3 {
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 40px;
+            margin-top: 200px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 250px;
+            height: 160px;
+        }
+
+        .bigDiv #insideDiv4 {
+            background-color: rgba(0, 0, 0, 0.4);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px #000;
+            position: absolute;
+            margin-left: 330px;
+            margin-top: 200px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 250px;
+            height: 160px;
+        }
+
+        .bigDiv button {
+            background-color: rgb(14, 148, 232);
+            margin: auto;
+            padding: 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: absolute;
+            margin-left: 240px;
+            margin-top: 380px;
+            padding-right: 20px;
+            padding-left: 20px;
+            width: 150px;
+            height: 60px;
+        }
+
+        h3 {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            line-height: inherit;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            line-height: inherit;
+            font-size: 3.5ex;
+        }
+
+        .bigDiv h2 {
+            padding: 10px;
+            text-align: center;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            line-height: inherit;
+            font-size: 4ex;
+        }
+
+        h4 {
+            text-align: center;
+            font-style: italic;
+            line-height: inherit;
+            font-size: 15px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        p {
+            position: relative;
+            margin: auto;
+            font-family: "lora-regular", serif;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        .cv p {
+            position: relative;
+            margin: auto;
+            font-family: "lora-regular", serif;
+            font-size: 17px;
+            line-height: 1.1;
+        }
+
+        input,
+        select {
+            padding: 8px;
+            margin: 12px 0px;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 16px;
+            font-family: 'Pacifico';
+            display: inline-table;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        button>a {
+            text-decoration: none;
+            color: white;
+        }
+
+        button>a:hover {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+
+    <script>
+        //                if (!document.cookie) {
+        //                    window.location.href = "login-page.html";
+        //                }
+    </script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <h2> Student </h2>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link" href="student-page.html">Home</a>
+            </li>
+
+        </ul>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+
+            </li>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-danger" onclick="logOut()"> LogOut </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+    </nav>
+
+    <div id="imageDiv">
+        <img alt="student icon image" src="student-icon.png">
+        <div id="writeName" style="left: : 50px:">
+            <h2>Maximilian Pattinson</h2>
+            <h4>Student at MIT</h4>
+        </div>
+    </div>
+
+    <div class="persnalInformaion">
+        <h3>Student Details</h3>
+        <p><strong>Name: </strong>Maximilian Pattinson<br> <strong>Faculty: </strong> Information Technology <br> <strong>Level: </strong> Sophomore "2"
+            <br><strong>Email: </strong> Dwight Schrute@gmail.com
+        </p>
+
+    </div>
+    <div class="cv">
+        <h2>A Little Bit About Me </h2>
+        <p>Expert computer scientist with diverse work experience, including programming, software development, and consulting. Extensive knowledge of software development cycle as well as proficiency in several programming languages. Dedicated to meeting customer requirements with innovative solutions that maximize efficiency and exceed capability targets. Consistently use in-depth knowledge of budgetary issues affecting development and implementation to create cost-effective solutions. Comfortable discussing technical issues and solutions with scientists and analysts as well as clients. </p>
+    </div>
+    <div class="bigDiv">
+        <h2>Compute Average </h2>
+        <form name="form" method="post" onsubmit="return Compute()">
+
+            <div id="insideDiv1">
+                <input type="text" placeholder="Enter your mark" id="mark1" name="mark1">
+                <input type="text" placeholder="Enter the course hour" id="hour1" name="hour1">
+            </div>
+
+            <div id="insideDiv2">
+                <input type="text" placeholder="Enter your mark" id="mark2" name="mark2">
+                <input type="text" placeholder="Enter the course hour" id="hour2" name="hour2">
+            </div>
+
+            <div id="insideDiv3">
+                <input type="text" placeholder="Enter your mark" id="mark3" name="mark3">
+                <input type="text" placeholder="Enter the course hour" id="hour3" name="hour3">
+            </div>
+
+            <div id="insideDiv4">
+                <input type="text" placeholder="Enter your mark" id="mark4" name="mark4">
+                <input type="text" placeholder="Enter the course hour" id="hour4" name="hour4">
+            </div>
+            <button type="submit">Compute</button>
+        </form>
+    </div>
+    <script>
+        var mark1 = document.getElementById('mark1');
+        var mark2 = document.getElementById('mark2');
+        var mark3 = document.getElementById('mark3');
+        var mark4 = document.getElementById('mark4');
+
+        var hour1 = document.getElementById('hour1');
+        var hour2 = document.getElementById('hour2');
+        var hour3 = document.getElementById('hour3');
+        var hour4 = document.getElementById('hour4');
+
+        function Compute() {
+            var allHour = (parseFloat(hour1.value) + parseFloat(hour2.value) + parseFloat(hour3.value) + parseFloat(hour4.value));
+            var compute = ((parseFloat(mark1.value) * parseFloat(hour1.value)) + (parseFloat(mark2.value) * parseFloat(hour2.value)) + (parseFloat(mark3.value) * parseFloat(hour3.value)) + (parseFloat(mark4.value) * parseFloat(hour4.value)));
+            alert('Your Average is ' + compute / allHour);
+        }
+
+        function logOut() {
+            location.href = "login-page.html";
+        }
+    </script>
+    <!--<script src="Java%2520Script/computeAverage.js"></script>-->
+</body></html>
